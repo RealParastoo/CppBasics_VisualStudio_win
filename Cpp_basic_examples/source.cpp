@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <queue>
+#include <stack>
 
 using namespace std;
 
@@ -31,6 +32,7 @@ public:
     }
 
 };
+
 void queue_data_structure(void)
 {
     queue<int> numbers;
@@ -82,11 +84,73 @@ void queue_data_structure(void)
 /*queue data structure*/
 
 /*stack data structure*/
+class stack_employee
+{
+public:
+    int day;
 
+    stack_employee(int dyys)
+    {
+        cout << "constructor called " << dyys << endl;
+        this->day = dyys;
+    }
+
+    stack_employee(const stack_employee &employee)
+    {
+        cout << "copy constructor called " << employee.day << endl;
+        this->day = employee.day;
+    }
+
+    ~stack_employee()
+    {
+        cout << "destructor called" << endl;
+    }
+
+};
+
+void stack_data_structure(void)
+{
+    stack<int> stack_num;
+    cout << "stack size:" << stack_num.size() << endl;
+    if (stack_num.empty())
+    {
+        cout << "stack is empty" << endl;
+    }
+
+    stack_num.push(4);
+    cout << "stack size after push:" << stack_num.size() << endl;
+    if (!stack_num.empty())
+    {
+        cout << "stack is not empty" << endl;
+    }
+    //cout << "top is: " << stack_num.top() << endl;
+
+    stack_num.push(9);
+    stack_num.push(5);
+    cout << "top is: " << stack_num.top() << endl;
+    stack_num.pop();
+    cout << "top after pop is: " << stack_num.top() << endl;
+
+    stack<int> stackNum;
+    stackNum.push(3);
+    stackNum.swap(stack_num);
+    cout << "other stack size:" << stackNum.size() << endl;
+
+    stack<stack_employee> empl_stack;
+    //stack_employee joe(11);
+    //empl_stack.push(joe);
+    empl_stack.emplace(20);
+
+    //stack_employee top_emp = empl_stack.top();
+    empl_stack.pop();
+
+}
 /*stack data structure*/
+
 int main()
 {
-    queue_data_structure();
+    //queue_data_structure();
+    stack_data_structure();
     return 0;
 }
 
