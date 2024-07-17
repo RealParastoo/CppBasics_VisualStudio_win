@@ -4,6 +4,8 @@
 #include <queue>
 
 using namespace std;
+
+/*queue data structure*/
 class queue_student
 {
 public:
@@ -29,7 +31,6 @@ public:
     }
 
 };
-
 void queue_data_structure(void)
 {
     queue<int> numbers;
@@ -78,7 +79,11 @@ void queue_data_structure(void)
     cout << "after pop" << endl;
 
 }
+/*queue data structure*/
 
+/*stack data structure*/
+
+/*stack data structure*/
 int main()
 {
     queue_data_structure();
