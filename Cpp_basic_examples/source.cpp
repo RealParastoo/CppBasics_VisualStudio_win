@@ -3,6 +3,8 @@
 #include <iostream>
 #include <queue>
 #include <stack>
+#include <tuple>
+#include <vector>
 
 using namespace std;
 
@@ -147,10 +149,64 @@ void stack_data_structure(void)
 }
 /*stack data structure*/
 
+/*return multiple values of a func*/
+tuple<int, int, string> tupleReturnFnc(int x, int y)
+{
+    //return make_tuple(x + y, x - y, "return a string");
+    return {x + y, x - y, "return a string"};
+}
+
+vector<int> vectorReturn()
+{
+    vector<int> nummbers;
+    nummbers.push_back(7);
+    nummbers.push_back(2);
+    nummbers.push_back(3);
+
+    return nummbers;
+}
+
+void passByRefference(int a, int b, int &sam, int &diff)
+{
+    sam = a + b;
+    diff = a - b;
+}
+
+void multipleRetFunc(void)
+{
+    int a = 10;
+    int b = 6;
+    /*int sum;
+    int diff;
+    string str;*/
+
+    //tie(sum, diff, str) = tupleReturnFnc(a, b);
+    auto[sum, diff, str] = tupleReturnFnc(a, b);
+    cout << "Sum: " << sum << endl;
+    cout << "diff: " << diff << endl;
+    cout << "string: " << str << endl;
+    cout << endl;
+
+    vector<int> retVector = vectorReturn();
+    for (int i : retVector)
+    {
+        cout << i << endl;
+    }
+    cout << endl;
+
+    int tot, sub;
+    passByRefference(a, b, tot, sub);
+    cout << "tot: " << tot << endl;
+    cout << "sub: " << sub << endl;
+}
+
+/*return multiple values of a func*/
+
 int main()
 {
     //queue_data_structure();
-    stack_data_structure();
+    //stack_data_structure();
+    multipleRetFunc();
     return 0;
 }
 
