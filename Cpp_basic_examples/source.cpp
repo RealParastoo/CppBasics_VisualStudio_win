@@ -199,14 +199,62 @@ void multipleRetFunc(void)
     cout << "tot: " << tot << endl;
     cout << "sub: " << sub << endl;
 }
-
 /*return multiple values of a func*/
+
+/*lambda expressions*/
+template <typename C> void print(const string& s, const C& c) {
+    cout << s;
+
+    for (const auto& e : c) {
+        cout << e << " ";
+    }
+
+    cout << endl;
+}
+
+void fillVector(vector<int>& v)
+{
+    static int nextValue = 1;
+
+    generate(v.begin(), v.end(), [] { return nextValue++; });
+}
+
+void lambda_exp(void)
+{
+    const int elementCount = 9;
+    vector<int> v(elementCount, 1);
+
+    int x = 1;
+    int y = 1;
+
+    generate_n(v.begin() + 2,
+        elementCount - 2,
+        [=]() mutable throw() -> int {            
+            int n = x + y;
+         
+            x = y;
+            y = n;
+            return n;
+        });
+    print("vector v after call to generate_n() with lambda: ", v);
+
+    cout << "x: " << x << " y: " << y << endl;
+
+    fillVector(v);
+    print("vector v after 1st call to fillVector(): ", v);
+    
+    fillVector(v);
+    print("vector v after 2nd call to fillVector(): ", v);
+}
+
+/*lambda expressions*/
 
 int main()
 {
     //queue_data_structure();
     //stack_data_structure();
-    multipleRetFunc();
+    //multipleRetFunc();
+    lambda_exp();
     return 0;
 }
 
