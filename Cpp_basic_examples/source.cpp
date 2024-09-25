@@ -246,15 +246,48 @@ void lambda_exp(void)
     fillVector(v);
     print("vector v after 2nd call to fillVector(): ", v);
 }
-
 /*lambda expressions*/
+
+/*array of objects*/
+class Square2
+{
+public:
+    int side_len;
+    string color;
+    void print()
+    {
+        cout << "length is: " << side_len;
+        cout << ", coler is: " << color <<endl;
+    }
+    
+    Square2()
+    {
+        side_len = 12;
+        color = "pink";
+    }
+    
+    Square2(int len, string col)
+    {
+        side_len = len;
+        color = col;
+    }
+};
+void arrayOf_objects()
+{
+    Square2 squ[3] = {Square2(2,"red"),Square2(2,"blue") };
+    for (int i = 0; i < 3; i++)
+        squ[i].print();
+}
+
+/*array of objects*/
 
 int main()
 {
     //queue_data_structure();
     //stack_data_structure();
     //multipleRetFunc();
-    lambda_exp();
+    //lambda_exp();
+    arrayOf_objects();
     return 0;
 }
 

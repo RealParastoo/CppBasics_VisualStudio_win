@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "K:\\parastoo\\CppBasics_VisualStudio_win\\",
+  "WorkspaceRootPath": "D:\\C\u002B\u002B\\CppBasics_VisualStudio_win\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E48D61E7-082E-4EA9-A738-CA3106672965}|Cpp_basic_examples\\Cpp_basic_examples.vcxproj|K:\\parastoo\\CppBasics_VisualStudio_win\\Cpp_basic_examples\\source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E48D61E7-082E-4EA9-A738-CA3106672965}|Cpp_basic_examples\\Cpp_basic_examples.vcxproj|D:\\C\u002B\u002B\\CppBasics_VisualStudio_win\\Cpp_basic_examples\\source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E48D61E7-082E-4EA9-A738-CA3106672965}|Cpp_basic_examples\\Cpp_basic_examples.vcxproj|solutionrelative:Cpp_basic_examples\\source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "source.cpp",
-              "DocumentMoniker": "K:\\parastoo\\CppBasics_VisualStudio_win\\Cpp_basic_examples\\source.cpp",
+              "DocumentMoniker": "D:\\C\u002B\u002B\\CppBasics_VisualStudio_win\\Cpp_basic_examples\\source.cpp",
               "RelativeDocumentMoniker": "Cpp_basic_examples\\source.cpp",
-              "ToolTip": "K:\\parastoo\\CppBasics_VisualStudio_win\\Cpp_basic_examples\\source.cpp",
+              "ToolTip": "D:\\C\u002B\u002B\\CppBasics_VisualStudio_win\\Cpp_basic_examples\\source.cpp",
               "RelativeToolTip": "Cpp_basic_examples\\source.cpp",
-              "ViewState": "AQIAAPEAAAAAAAAAAAAswNoAAAAMAAAA",
+              "ViewState": "AgIAAPQAAAAAAAAAAAAswBQBAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-15T17:48:22.828Z",
               "EditorCaption": ""
