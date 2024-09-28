@@ -278,8 +278,45 @@ void arrayOf_objects()
     for (int i = 0; i < 3; i++)
         squ[i].print();
 }
-
 /*array of objects*/
+
+/*constructor delegation*/
+class Rectangle
+{
+public:
+    int length;
+    int width;
+    int area;
+    string color;
+
+    void print()
+    {
+        cout << "len:" << length << endl;
+        cout << "width:" << width << endl;
+        cout << "area:" << area << endl;
+        cout << "color:" << color << endl;
+    }
+
+    Rectangle(int l, int w)
+    {
+        length = l;
+        width = w;
+        area = l * w;
+        cout << "constructor 1 run" << endl;
+    }
+    Rectangle(int l, int w, string c):Rectangle(l, w)
+    {
+        color = c;
+        cout << "constructor 2 run" << endl;
+    }
+};
+
+void constructor_delegation()
+{
+    Rectangle rect1(2, 3, "red");
+    rect1.print();
+}
+/*constructor delegation*/
 
 int main()
 {
@@ -287,7 +324,8 @@ int main()
     //stack_data_structure();
     //multipleRetFunc();
     //lambda_exp();
-    arrayOf_objects();
+    //arrayOf_objects();
+    constructor_delegation();
     return 0;
 }
 
