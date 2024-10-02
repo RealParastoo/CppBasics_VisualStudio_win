@@ -318,6 +318,64 @@ void constructor_delegation()
 }
 /*constructor delegation*/
 
+/*this keyword*/
+class Student;
+void creat_report(Student *student);
+
+class Student
+{
+public:
+    int age;
+    string name;
+
+    Student(int age, string name)
+    {
+        this->age = age;
+        this->name = name;
+        cout << "  this memory address: " << this << endl;
+    }
+    void increas_age()
+    {
+        this->age = this->age + 1;
+    }
+    void incres_and_print()
+    {
+        this->increas_age();
+        cout << "the age is: " << this->age << endl;
+    }
+    void graduate()
+    {
+        cout << "Congrat!" << endl;
+        creat_report(this);
+    }
+    Student& set_name(string name)
+    {
+        this->name = name;
+        return *this;
+    }
+    Student& set_age(int age)
+    {
+        this->age = age;
+        return *this;
+    }
+};
+
+void creat_report(Student* student)
+{
+    cout << student->age << " " << student->name << endl;
+}
+
+void this_keyword()
+{
+    Student stu1(21, "Jey");
+    cout << "mem address is: " << &stu1 << endl;
+    stu1.incres_and_print();
+    stu1.graduate();
+    stu1.set_name("gray").set_age(34);
+    stu1.graduate();
+}
+/*this keyword*/
+
 int main()
 {
     //queue_data_structure();
@@ -325,7 +383,8 @@ int main()
     //multipleRetFunc();
     //lambda_exp();
     //arrayOf_objects();
-    constructor_delegation();
+    //constructor_delegation();
+    this_keyword();
     return 0;
 }
 
