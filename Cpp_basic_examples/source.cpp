@@ -376,6 +376,44 @@ void this_keyword()
 }
 /*this keyword*/
 
+/*operator overloading*/
+class num1 {
+public:
+    int n;
+
+    num1(int set_n)
+    {
+        n = set_n;
+    }
+    num1 operator+(const num1& numX)
+    {
+        cout << "this->n: " << this->n << endl;
+        cout << "numX: " << numX.n << endl;
+        return num1(this->n + numX.n);
+    }
+
+    bool operator==(const num1& numX)
+    {
+        if (this->n == numX.n) return true;
+        else return false;
+    }
+};
+
+void operator_overloading()
+{
+    num1 x1(3);
+    num1 x2(9);
+
+    num1 x3 = x1 + x2;
+    cout << "x3.n: " << x3.n << endl;
+
+    if (x1.n == x2.n)
+        cout << "x1 is equal to x2" << endl;
+    else 
+        cout << "x1 is NOT equal to x2" << endl;
+}
+/*operator overloading*/
+
 int main()
 {
     //queue_data_structure();
@@ -384,7 +422,8 @@ int main()
     //lambda_exp();
     //arrayOf_objects();
     //constructor_delegation();
-    this_keyword();
+    //this_keyword();
+    operator_overloading();
     return 0;
 }
 
