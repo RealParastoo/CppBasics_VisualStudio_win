@@ -414,6 +414,46 @@ void operator_overloading()
 }
 /*operator overloading*/
 
+/*function overloading*/
+int add(int x, int y)
+{
+    return x + y;
+}
+int add(int x, int y, int z)
+{
+    return x + y + z;
+}
+double add(double x, double y)
+{
+    return x + y;
+}
+
+class Add
+{
+public:
+    int add(int x, int y)
+    {
+        return x + y;
+    }
+
+    double add(double x, double y)
+    {
+        return x + y;
+    }
+};
+void fn_overloading()
+{
+    cout << add(3, 6) << endl;
+    cout << add(3, 6, 5) << endl;
+    cout << add(3.1, 6.7) << endl;
+
+    Add addfn;
+    cout << addfn.add(7, 9) << endl;
+    cout << addfn.add(7.3, 9.8) << endl;
+}
+
+/*function overloading*/
+
 int main()
 {
     //queue_data_structure();
@@ -423,7 +463,8 @@ int main()
     //arrayOf_objects();
     //constructor_delegation();
     //this_keyword();
-    operator_overloading();
+    //operator_overloading();
+    fn_overloading();
     return 0;
 }
 
