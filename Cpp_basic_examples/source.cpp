@@ -5,6 +5,7 @@
 #include <stack>
 #include <tuple>
 #include <vector>
+#include <math.h>
 
 using namespace std;
 
@@ -454,6 +455,33 @@ void fn_overloading()
 
 /*function overloading*/
 
+/*namespace basics*/
+namespace raw
+{
+    void print(double number)
+    {
+        cout << "print raw: " << number << endl;
+    }
+}
+namespace rounded
+{
+    void print(double number)
+    {
+        cout << "print raw: " << round(number) << endl;
+    }
+}
+
+void namespace_basic()
+{
+    /*raw::print(4.67);
+    rounded::print(4.67);*/
+
+    using namespace rounded;
+    print(698.14);
+
+}
+/*namespace basics*/
+
 int main()
 {
     //queue_data_structure();
@@ -464,7 +492,9 @@ int main()
     //constructor_delegation();
     //this_keyword();
     //operator_overloading();
-    fn_overloading();
+    //fn_overloading();
+    namespace_basic();
+
     return 0;
 }
 
