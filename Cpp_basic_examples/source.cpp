@@ -482,6 +482,34 @@ void namespace_basic()
 }
 /*namespace basics*/
 
+/*protected access specifier*/
+class BaseClass {
+public:
+    int pub_member;
+private:
+    int priv_member;
+protected:
+    int prot_member;
+};
+class DerivClass : public BaseClass {
+public:
+    void mem_access()
+    {
+        pub_member = 76;
+        cout << "public mem: " << pub_member << endl;
+        prot_member = 64;
+        cout << "protected mem: " << prot_member << endl;
+    }
+
+};
+
+void protected_AS()
+{
+    DerivClass class1;
+    class1.mem_access();
+}
+/*protected access specifier*/
+
 int main()
 {
     //queue_data_structure();
@@ -493,9 +521,8 @@ int main()
     //this_keyword();
     //operator_overloading();
     //fn_overloading();
-    namespace_basic();
+    //namespace_basic();
+    protected_AS();
 
     return 0;
 }
-
-
