@@ -510,6 +510,42 @@ void protected_AS()
 }
 /*protected access specifier*/
 
+/*destructor basic*/
+class BaseClass0
+{
+public:
+    BaseClass0()
+    {
+        cout << "Base Constructor run" << endl;
+    }
+
+    ~BaseClass0()
+    {
+        cout << "Base Destructor run" << endl;
+    }
+};
+
+class DerivedClass0
+{
+public:
+    DerivedClass0()
+    {
+        cout << "Derived Constructor run" << endl;
+    }
+
+    ~DerivedClass0()
+    {
+        cout << "Derived Destructor run" << endl;
+    }
+};
+
+void destructor_basic()
+{
+    BaseClass0 example0;
+    DerivedClass0 example1;
+}
+/*destructor basic*/
+
 int main()
 {
     //queue_data_structure();
@@ -522,7 +558,8 @@ int main()
     //operator_overloading();
     //fn_overloading();
     //namespace_basic();
-    protected_AS();
+    //protected_AS();
+    destructor_basic();
 
     return 0;
 }
