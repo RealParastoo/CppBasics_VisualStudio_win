@@ -546,6 +546,33 @@ void destructor_basic()
 }
 /*destructor basic*/
 
+/*smart pointer*/
+class SmartPtr
+{
+    int* sptr;
+public:
+    SmartPtr(int* x = NULL)
+    {
+        sptr = x;
+    }
+    ~SmartPtr()
+    {
+        delete(sptr);
+    }
+    int& operator*()
+    {
+        return *sptr;
+    }
+};
+
+void smart_pointer(void)
+{
+    SmartPtr foo(new (int));
+    *foo = 68;
+    cout << "pointer value is: " << *foo << endl;
+}
+/*smart pointer*/
+
 int main()
 {
     //queue_data_structure();
@@ -559,7 +586,8 @@ int main()
     //fn_overloading();
     //namespace_basic();
     //protected_AS();
-    destructor_basic();
+    //destructor_basic();
+    smart_pointer();
 
     return 0;
 }
