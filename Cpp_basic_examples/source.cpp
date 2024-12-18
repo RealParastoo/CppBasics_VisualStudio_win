@@ -6,6 +6,7 @@
 #include <tuple>
 #include <vector>
 #include <math.h>
+#include <algorithm> 
 
 using namespace std;
 
@@ -573,6 +574,84 @@ void smart_pointer(void)
 }
 /*smart pointer*/
 
+/*static mem variable*/
+class Animal {
+public:
+    string species;
+    static int total;
+
+    Animal(string x)
+    {
+        species = x;
+        total++;
+    }
+
+    ~Animal()
+    {
+        total--;
+    }
+
+};
+int Animal::total = 0;
+
+
+void static_mem_variable()
+{
+    Animal* lion = new Animal("lion");
+    Animal* tiger = new Animal("tiger");
+    Animal* bear = new Animal("bear");
+
+    cout << lion->species << endl;
+    cout << tiger->species << endl;
+    cout << "total: " << Animal::total << endl;
+    cout << "lion total: " << lion->total << endl;
+
+    delete lion;
+    delete tiger;
+    delete bear;
+    cout << "total: " << Animal::total << endl;
+}
+/*static mem variable*/
+
+/*static mem func*/
+class Squire1
+{
+private:
+    int sidelen;
+    static int total_sq;
+
+public:
+    int area()
+    {
+        return sidelen * sidelen;
+    }
+
+    Squire1(int x)
+    {
+        sidelen = x;
+        cout << "side len is: " << this->sidelen << endl;
+        total_sq++;
+    }
+
+    static int gettotal()
+    {
+        return total_sq;
+    }
+
+};
+
+int Squire1::total_sq = 0;
+
+void static_mem_func()
+{
+    Squire1 sq1(4);
+    Squire1 sq2(7);
+    cout << "Sq1: " << sq1.area() << endl;
+    cout << "Sq2: " << sq2.area() << endl;
+    cout << "total: " << Squire1::gettotal() << endl;
+}
+/*static mem func*/
+
 int main()
 {
     //queue_data_structure();
@@ -587,7 +666,8 @@ int main()
     //namespace_basic();
     //protected_AS();
     //destructor_basic();
-    smart_pointer();
-
+    //smart_pointer();
+    //static_mem_variable();
+    static_mem_func();
     return 0;
 }
